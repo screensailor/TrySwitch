@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Peek",
+        "repositoryURL": "https://github.com/screensailor/Peek.git",
+        "state": {
+          "branch": "master",
+          "revision": "61e6360508db9bba6cd6f0a6098fb3b2ecbe1184",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
