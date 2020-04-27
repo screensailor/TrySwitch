@@ -5,8 +5,8 @@ extension Optional {
     @discardableResult
     public static func `do`(
         log to: ((Error) -> ())? = nil,
-        _ function: StaticString = #function,
-        _ file: StaticString = #file,
+        _ function: String = #function,
+        _ file: String = #file,
         _ line: Int = #line,
         _ ƒ: () throws -> Wrapped
     ) -> Wrapped? {
@@ -28,8 +28,8 @@ extension Optional {
     }
     
     @inlinable public func or(
-        _ function: StaticString = #function,
-        _ file: StaticString = #file,
+        _ function: String = #function,
+        _ file: String = #file,
         _ line: Int = #line
     ) throws -> Wrapped {
         try or(throw: "⚠️".error(function, file, line))

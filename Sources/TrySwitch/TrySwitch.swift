@@ -20,8 +20,8 @@ extension Try {
     }
     
     public func `default`(
-        function: StaticString = #function,
-        file: StaticString = #file,
+        function: String = #function,
+        file: String = #file,
         line: Int = #line
     ) {
         var errors: [Error] = []
@@ -29,7 +29,9 @@ extension Try {
             do { return try ƒ() }
             catch { errors.append(error) }
         }
-        "\(errors)".peek("⚠️", function, file, line)
+        for error in errors {
+            "\(error)".peek("⚠️", function: function, file: file, line: line)
+        }
     }
     
     public func `default`(_ ƒ: ([Error]) -> ()) {
