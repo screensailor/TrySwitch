@@ -4,17 +4,15 @@ public struct Try {
     
     private let cases: [() throws -> ()]
     
-    private init(_ cases: [() throws -> ()]) {
+    private init(_ cases: [() throws -> ()] = []) {
         self.cases = cases
     }
 }
 
 extension Try {
     
-    public static func `switch`(_ ƒ: @escaping () throws -> ()) -> Try {
-        self.init([ƒ])
-    }
-    
+    public static var `switch`: Try { self.init() }
+
     public func `case`(_ ƒ: @escaping () throws -> ()) -> Try {
         .init(cases + [ƒ])
     }
