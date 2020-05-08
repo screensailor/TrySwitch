@@ -1,4 +1,9 @@
 import Peek
+infix operator ?= : AssignmentPrecedence
+
+public func ?= <A>(l: inout A, r: A?) {
+    if let r = r { l = r }
+}
 
 extension Optional {
     
@@ -38,5 +43,15 @@ extension Optional {
     @inlinable public func or(throw error: @autoclosure () -> Error) throws -> Wrapped {
         guard let o = self else { throw error() }
         return o
+    }
+}
+
+extension Optional: CustomStringConvertible {
+    
+    public var description: String {
+        switch self {
+        case .none: return "\(Wrapped.self)?.none"
+        case .some(let o): return "\(o)?"
+        }
     }
 }
