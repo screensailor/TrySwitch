@@ -1,6 +1,6 @@
 import Peek
 
-public struct Try {
+public struct Try { // TODO: empty enum instead
     
     private let cases: [() throws -> ()]
     
@@ -11,7 +11,7 @@ public struct Try {
 
 extension Try {
     
-    public static var `switch`: Try { self.init() }
+    public static var `switch`: Try { self.init() } // TODO: return TrySwitch instead
 
     public func `case`(_ ƒ: @escaping () throws -> ()) -> Try {
         .init(cases + [ƒ])

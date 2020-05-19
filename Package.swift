@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "TrySwitch", targets: ["TrySwitch"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/screensailor/Peek.git", .branch("master")),
+        .package(url: "https://github.com/screensailor/Peek.git", from: "0.1.0"),
     ],
     targets: [
         .target(name: "TrySwitch", dependencies: ["Peek"]),
